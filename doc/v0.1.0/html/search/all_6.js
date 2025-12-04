@@ -1,0 +1,15 @@
+var searchData=
+[
+  ['getbaudrate_0',['getbaudrate',['../classspp_1_1SerialPort.html#aa1d389c855abb764edff162f4fccf7b2',1,'spp::SerialPort::getBaudrate()'],['../classspp_1_1SerialPort_1_1SerialPortImpl.html#af2fa280d56960be820c0902575f496a5',1,'spp::SerialPort::SerialPortImpl::getBaudrate() const noexcept']]],
+  ['getcd_1',['getcd',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#ac0ded2229e3b7e41b094acb506b35886',1,'spp::SerialPort::SerialPortImpl::getCD()'],['../classspp_1_1SerialPort.html#a1142a290008d78fab2a65e973f859377',1,'spp::SerialPort::getCD()']]],
+  ['getcts_2',['getcts',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#afd74a657b166dc525da12a20692ac9e3',1,'spp::SerialPort::SerialPortImpl::getCTS()'],['../classspp_1_1SerialPort.html#a2e352aa6248addfd531fc240181ffc1e',1,'spp::SerialPort::getCTS()']]],
+  ['getdatabits_3',['getdatabits',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#a1c403043c6e3aab4e2a8c5d4b4f1cf53',1,'spp::SerialPort::SerialPortImpl::getDataBits()'],['../classspp_1_1SerialPort.html#a0c682e163b586f7ed2f2d60cf1633f67',1,'spp::SerialPort::getDataBits()']]],
+  ['getdsr_4',['getdsr',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#a144b6ad4c25799de523118045763e094',1,'spp::SerialPort::SerialPortImpl::getDSR()'],['../classspp_1_1SerialPort.html#a9ca2e869bdcb7545b0c30a43bcd5ad1e',1,'spp::SerialPort::getDSR() const']]],
+  ['getflowctrl_5',['getflowctrl',['../classspp_1_1SerialPort.html#a055919f74ad047613ec8781b076aeeb8',1,'spp::SerialPort::getFlowCtrl()'],['../classspp_1_1SerialPort_1_1SerialPortImpl.html#a613114fe013aa74826ebe8e7346367b0',1,'spp::SerialPort::SerialPortImpl::getFlowCtrl() const noexcept']]],
+  ['gethandle_6',['getHandle',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#af71a70ea0a522cbfa6a06736a2c8771c',1,'spp::SerialPort::SerialPortImpl']]],
+  ['getparity_7',['getparity',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#ace8047851770d1d46d3604cc82c3d986',1,'spp::SerialPort::SerialPortImpl::getParity()'],['../classspp_1_1SerialPort.html#aa52e6a3b8e70dc8c84207b64a7310ab3',1,'spp::SerialPort::getParity()']]],
+  ['getport_8',['getport',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#a319a215fef67612758559b4e2aa803b6',1,'spp::SerialPort::SerialPortImpl::getPort()'],['../classspp_1_1SerialPort.html#affc06ed68395af582f4e6c88d800ecab',1,'spp::SerialPort::getPort()']]],
+  ['getri_9',['getri',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#a1e4e832ec104feffdc3e19d026b33bb5',1,'spp::SerialPort::SerialPortImpl::getRI()'],['../classspp_1_1SerialPort.html#ac4fb3980ec8062bd24cdc7712ef3d329',1,'spp::SerialPort::getRI()']]],
+  ['getstopbits_10',['getstopbits',['../classspp_1_1SerialPort_1_1SerialPortImpl.html#a0959cd32bc405dd099d5a518fd335cdb',1,'spp::SerialPort::SerialPortImpl::getStopBits()'],['../classspp_1_1SerialPort.html#a2cc3fbdd115183f74e2f4097354ae45e',1,'spp::SerialPort::getStopBits() const noexcept']]],
+  ['gettimeout_11',['getTimeout',['../classspp_1_1SerialPort.html#a07e47726c577a431fc0ac338546529e0',1,'spp::SerialPort']]]
+];

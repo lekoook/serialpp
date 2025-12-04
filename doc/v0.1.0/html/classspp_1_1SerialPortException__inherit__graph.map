@@ -1,0 +1,9 @@
+<map id="spp::SerialPortException" name="spp::SerialPortException">
+<area shape="rect" id="Node000001" title="Base class for all serial port related exceptions. This exception are used to indicate general errors..." alt="" coords="106,79,286,104"/>
+<area shape="rect" id="Node000003" href="$classspp_1_1PortClosedException.html" title="Exception that indicates an operation is not allowed when the serial port is closed." alt="" coords="5,152,192,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,114,116,154,113,150,168,110"/>
+<area shape="rect" id="Node000004" href="$classspp_1_1PortIOException.html" title="Exception that indicates an error with the serial port input/output operations or configurations." alt="" coords="216,152,373,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,110,280,150,277,154,221,114"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="139,5,253,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,44,199,79,193,79,193,44"/>
+</map>

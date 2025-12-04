@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,120,56"/>
+<area shape="rect" id="Node000001" href="$classspp_1_1SerialPortException.html" title="Base class for all serial port related exceptions. This exception are used to indicate general errors..." alt="" coords="168,31,348,56"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="134,41,168,41,168,46,134,46"/>
+<area shape="rect" id="Node000002" href="$classspp_1_1PortClosedException.html" title="Exception that indicates an operation is not allowed when the serial port is closed." alt="" coords="396,5,583,31"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="362,29,395,26,396,31,362,35"/>
+<area shape="rect" id="Node000003" href="$classspp_1_1PortIOException.html" title="Exception that indicates an error with the serial port input/output operations or configurations." alt="" coords="411,55,568,80"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="362,51,411,57,410,62,362,57"/>
+</map>

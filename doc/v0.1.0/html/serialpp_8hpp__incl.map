@@ -1,0 +1,29 @@
+<map id="/home/lekok/workspace/projects/serialpp/src/serialpp.hpp" name="/home/lekok/workspace/projects/serialpp/src/serialpp.hpp">
+<area shape="rect" id="Node000001" title="Contains the public interfaces for serialpp." alt="" coords="599,5,775,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,108,72,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="599,44,370,68,230,87,86,111,85,105,229,82,370,63,598,39"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,108,239,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="599,51,251,108,250,103,598,46"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="264,108,331,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="599,55,345,110,344,105,598,50"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="355,108,421,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="599,62,436,108,434,103,598,57"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="446,108,509,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="624,63,519,105,517,100,622,58"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="533,108,619,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="654,62,603,102,600,97,651,58"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="643,108,730,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="689,60,689,94,684,94,684,60"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="755,108,816,133"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="719,58,763,97,760,101,715,62"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="840,108,917,133"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="746,58,841,100,839,105,744,63"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="941,108,1005,133"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="775,58,929,103,927,108,773,63"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1029,108,1088,133"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="776,50,1016,105,1015,110,774,55"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1112,108,1176,133"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="775,45,923,71,1099,105,1098,111,922,76,774,50"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1201,108,1263,133"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="775,42,961,67,1188,105,1187,111,960,72,775,47"/>
+</map>
