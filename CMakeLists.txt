@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.10.0)
-project(serialpp VERSION 0.1.0 LANGUAGES C CXX)
+project(serialpp
+    VERSION 0.1.0
+    DESCRIPTION "C++ library for serial ports"
+    LANGUAGES C CXX
+)
 
 # Source files
 set(SRCS
@@ -36,15 +40,4 @@ target_compile_features(subscription_eg PUBLIC cxx_std_17)
 target_link_libraries(subscription_eg serialpp)
 
 # Build doxygen docs
-find_package(Doxygen REQUIRED COMPONENTS dot)
-if (Doxygen_FOUND)
-    doxygen_add_docs(doc
-        ${PROJECT_SOURCE_DIR}
-        ALL
-        COMMENT "Generating API documentation with Doxygen"
-        CONFIG_FILE ${PROJECT_SOURCE_DIR}/Doxyfile
-    )
-else()
-    message(STATUS "Doxygen not found, documentation will not be generated.")
-endif()
-
+add_subdirectory(doc)

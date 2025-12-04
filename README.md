@@ -37,6 +37,10 @@ cmake --build .
 
 This will build the library and examples.
 
+## API
+
+API Documentation: https://lekoook.github.io/serialpp/doc/v0.1.0/html/index.html
+
 ## Examples
 
 - Listing serial ports: list_ports.cpp
