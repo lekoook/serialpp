@@ -179,10 +179,10 @@ private:
     using WrapperFunc = std::function<void()>;
     std::deque<WrapperFunc> queue_{};
     std::thread thread_{};
-    std::mutex qMut_{};
+    std::mutex mut_{};
     std::condition_variable cv_{};
-    std::atomic<bool> running_{false};
-    std::atomic<bool> repeatStop_{false};
+    bool stop_{};
+    std::atomic<bool> repeatStop_{};
 
     void run_();
     void postRepeat_(WrapperFunc func);
@@ -198,7 +198,7 @@ public:
         std::function<decltype(callable(args...))()> func = 
             std::bind(std::forward<Callable>(callable), std::forward<Args>(args)...);
         auto task = std::make_shared<std::packaged_task<decltype(callable(args...))()>>(func);
-        std::lock_guard lock(qMut_);
+        std::lock_guard lock(mut_);
         queue_.emplace_back(WrapperFunc([task]() {
             (*task)();
         }));
