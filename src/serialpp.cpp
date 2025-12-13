@@ -151,6 +151,63 @@ bool MsTimer::hasElapsed() const
     return remaining() == zero();
 }
 
+void TaskQueue::run_()
+{
+    std::mutex cvMut{};
+    std::unique_lock cvLock(cvMut);
+    while(running_.load()) {
+        cv_.wait(cvLock, [&]() -> bool {
+            std::lock_guard lock(qMut_);
+            return !queue_.empty() || !running_.load();
+        });
+
+        if (!running_.load()) {
+            break;
+        }
+
+        WrapperFunc func;
+        {
+            std::lock_guard lock(qMut_);
+            func = std::move(queue_.front());
+            queue_.pop_front();
+        }
+        // The task can take a long time and we want to minimize mutex holding time.
+        // So we release the mutex after we are done with the queue.
+        func();
+    }
+}
+
+void TaskQueue::postRepeat_(WrapperFunc func)
+{
+    std::lock_guard lock(qMut_);
+    queue_.emplace_back(WrapperFunc([&, func]() {
+        if (repeatStop_.load()) {
+            return;
+        }
+        func();
+        postRepeat_(func);
+    }));
+}
+
+TaskQueue::TaskQueue() : running_(true), repeatStop_(true)
+{
+    thread_ = std::thread(std::bind(&TaskQueue::run_, this));
+}
+
+TaskQueue::~TaskQueue()
+{
+    running_ = false;
+    cv_.notify_all();
+    if (thread_.joinable()) {
+        thread_.join();
+    }
+}
+
+void TaskQueue::stopRepeat()
+{
+    repeatStop_ = true;
+}
+
 Timeout::Timeout(
     uint32_t readTimeoutMs,
     uint32_t writeTimeoutMs,

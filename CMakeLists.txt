@@ -62,6 +62,7 @@ if (ENABLE_TESTS)
     )
     target_link_libraries(
         tests
+        serialpp
         GTest::gtest_main
     )
     target_include_directories(tests PRIVATE src)

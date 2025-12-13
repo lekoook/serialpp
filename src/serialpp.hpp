@@ -173,79 +173,24 @@ public:
 
 };
 
-
 class TaskQueue {
 
 private:
     using WrapperFunc = std::function<void()>;
     std::deque<WrapperFunc> queue_{};
     std::thread thread_{};
-    std::mutex mut_{};
     std::mutex qMut_{};
     std::condition_variable cv_{};
     std::atomic<bool> running_{false};
     std::atomic<bool> repeatStop_{false};
 
-    void run_()
-    {
-        while(running_.load()) {
-            std::unique_lock cvLock(mut_);
-            cv_.wait(cvLock, [&]() -> bool {
-                std::lock_guard lock(qMut_);
-                return !queue_.empty() || !running_.load();
-            });
-
-            if (!running_.load()) {
-                break;
-            }
-
-            WrapperFunc func;
-            {
-                std::lock_guard lock(qMut_);
-                func = std::move(queue_.front());
-                queue_.pop_front();
-                if (!queue_.empty()) {
-                    cv_.notify_one();
-                }
-            }
-            // The task can take a long time and we want to minimize mutex holding time.
-            // So we relase the mutex after we are done with the queue.
-            func();
-        }
-    }
-
-    template<typename Callable, typename... Args>
-    void postRepeat_(Callable&& callable, Args&&... args)
-    {
-        std::function<decltype(callable(args...))()> func = 
-            std::bind(std::forward<Callable>(callable), std::forward<Args>(args)...);
-        std::lock_guard lock(qMut_);
-        queue_.emplace_back(WrapperFunc([&, f=std::move(func), callable, args...]() {
-            if (repeatStop_.load()) {
-                return;
-            }
-            f();
-            postRepeat_(callable, args...);
-        }));
-        if (queue_.size() == 1) {
-            cv_.notify_one();
-        }
-    }
+    void run_();
+    void postRepeat_(WrapperFunc func);
 
 public:
-    TaskQueue() : running_(true), repeatStop_(true)
-    {
-        thread_ = std::thread(std::bind(&TaskQueue::run_, this));
-    }
+    TaskQueue();
 
-    ~TaskQueue()
-    {
-        running_ = false;
-        cv_.notify_all();
-        if (thread_.joinable()) {
-            thread_.join();
-        }
-    }
+    ~TaskQueue();
 
     template<typename Callable, typename... Args>
     auto enqueue(Callable&& callable, Args&&... args) -> std::future<decltype(callable(args...))>
@@ -257,25 +202,22 @@ public:
         queue_.emplace_back(WrapperFunc([task]() {
             (*task)();
         }));
-        if (queue_.size() == 1) {
-            cv_.notify_one();
-        }
+        cv_.notify_one();
         return task->get_future();
     }
-
+    
     template<typename Callable, typename... Args>
     void startRepeat(Callable&& callable, Args&&... args)
     {
         if (repeatStop_.load()) {
             repeatStop_ = false;
-            postRepeat_(std::forward<Callable>(callable), std::forward<Args>(args)...);
+            WrapperFunc func = std::bind(std::forward<Callable>(callable), std::forward<Args>(args)...);
+            postRepeat_(func);
+            cv_.notify_one();
         }
     }
 
-    void stopRepeat()
-    {
-        repeatStop_ = true;
-    }
+    void stopRepeat();
 
 };
 
