@@ -213,6 +213,7 @@ public:
             repeatStop_ = false;
             WrapperFunc func = std::bind(std::forward<Callable>(callable), std::forward<Args>(args)...);
             postRepeat_(func);
+            std::lock_guard lock(mut_);
             cv_.notify_one();
         }
     }
